@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+</head>
+<body style="background: #414141;" color="aliceblue" >
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li> <img id="photoshoot" src="aesthetic.webp" alt="photoshop" width="100"></li>
+            <li> <img id="photo" src="background.webp" alt="" width="10%"></li>
+            <li> <img id="pose" src="naruto.webp" alt="" width="10%"></li>
+            <li> <img id="asthetic" src="naruto1.webp" alt="" width="10%"></li>
+            <li><a style="color: aliceblue;"href="https://google.com " id="google" color="white">google</a></li>
+        </ul>
+    </div>
+    <script>
+        // ist aproach
+        // document.getElementById('owl').onclick=function(){
+        //     alert('Hello');
+        // }
+        // 2nd approach
+        // attachevent()
+        //jQuery - on
+        document.getElementById('photoshoot').addEventListener('click',function(e){
+            console.log('Hello again');
+        },false)
+        //type,timetamp,defaultPrevented
+        //target,toElement,srcElement,currentTarget
+        //clientX,clientY,secreenX,screenY
+        //altkey,ctrkey,shiftkey,keyCode
+
+
+        document.getElementById('pose').addEventListener('click',function(e){
+            console.log('clicked Hello again');
+            e.stopPropagation()
+        },false)
+        document.getElementById('google').addEventListener('click',function(e){
+            console.log('clicked google');
+            e.preventDefault();
+        },false)
+
+
+        document.querySelector('#images').addEventListener('click',function(e){
+            console.log(e.target.parentNode);
+            let removeit=e.target.parentNode
+            removeit.remove()
+        })
+    </script>
+</body>
+</html>
